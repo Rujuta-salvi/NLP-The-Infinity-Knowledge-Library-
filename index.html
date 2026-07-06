@@ -1,0 +1,515 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Infinity Knowledge Library — NLP Knowledge Artifact Repository</title>
+<meta name="description" content="An interactive AI-powered educational portal exploring Language Representation and Language Models through the Infinity Knowledge Library.">
+
+<!-- Fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400..700&family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,500&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+<!-- Font Awesome -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body data-theme="dark">
+
+<!-- ============ AMBIENT CANVAS (constellation) ============ -->
+<canvas id="constellation" aria-hidden="true"></canvas>
+
+<!-- ============ NAVIGATION ============ -->
+<nav class="navbar" id="navbar">
+  <a href="#entrance" class="nav-brand">
+    <span class="nav-brand-mark">&infin;</span>
+    <span class="nav-brand-text">Infinity Knowledge Library</span>
+  </a>
+
+  <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation" aria-expanded="false">
+    <span></span><span></span><span></span>
+  </button>
+
+  <ul class="nav-links" id="navLinks">
+    <li><a href="#entrance">Entrance</a></li>
+    <li><a href="#chambers">Chambers</a></li>
+    <li><a href="#galaxy">Galaxy</a></li>
+    <li><a href="#arena">Arena</a></li>
+    <li><a href="#observatory">Observatory</a></li>
+    <li><a href="#timeline">Timeline</a></li>
+    <li><a href="#impact">Impact</a></li>
+    <li><a href="#contributors">Contributors</a></li>
+  </ul>
+
+  <button class="theme-toggle" id="themeToggle" aria-label="Toggle light and dark mode">
+    <i class="fa-solid fa-moon"></i>
+  </button>
+</nav>
+
+<!-- ============ 1. GRAND LIBRARY ENTRANCE (HERO) ============ -->
+<header class="hero" id="entrance">
+  <div class="hero-glow hero-glow--a"></div>
+  <div class="hero-glow hero-glow--b"></div>
+
+  <div class="hero-inner">
+    <p class="hero-eyebrow"><i class="fa-solid fa-sparkles"></i> NLP Knowledge Artifact Repository</p>
+    <h1 class="hero-title">
+      Exploring Language Through<br>
+      <span class="hero-title-accent">The Infinity Knowledge Library</span>
+    </h1>
+    <p class="hero-subtitle">An interactive AI-powered educational portal for understanding Language Representation and Language Models.</p>
+
+    <div class="hero-typed-row">
+      <span class="hero-typed-label">Archiving now</span>
+      <span class="hero-typed"><span id="typedTarget"></span><span class="typed-cursor">|</span></span>
+    </div>
+
+    <a href="#chambers" class="btn btn--primary hero-cta">
+      Enter the Library <i class="fa-solid fa-arrow-right"></i>
+    </a>
+  </div>
+
+  <a href="#stats" class="hero-scroll-cue" aria-label="Scroll down">
+    <i class="fa-solid fa-chevron-down"></i>
+  </a>
+</header>
+
+<main>
+
+<!-- ============ 2. REPOSITORY STATISTICS ============ -->
+<section class="stats" id="stats">
+  <div class="stats-grid" id="statsGrid"></div>
+</section>
+
+<!-- ============ 3. THE AI ARCHIVIST EVOLUTION ============ -->
+<section class="section evolution" id="evolution">
+  <div class="section-head">
+    <p class="section-eyebrow">Archive Chamber 01</p>
+    <h2 class="section-title">The AI Archivist Evolution</h2>
+    <p class="section-desc">Six stages transformed the library from a system that merely identified words into one that understands language. Select any stage to open its record.</p>
+  </div>
+  <div class="evolution-track" id="evolutionTrack"></div>
+</section>
+
+<!-- ============ 4. KNOWLEDGE ARTIFACT CHAMBERS ============ -->
+<section class="section chambers" id="chambers">
+  <div class="section-head">
+    <p class="section-eyebrow">Archive Chamber 02</p>
+    <h2 class="section-title">Knowledge Artifact Chambers</h2>
+    <p class="section-desc">Twenty-one artifacts, each a self-contained record of definition, purpose, working principle, and real application. Open a capsule to step inside.</p>
+  </div>
+
+  <div class="chambers-tabs" id="chambersTabs">
+    <button class="chip is-active" data-filter="all">All Artifacts</button>
+    <button class="chip" data-filter="Text Preprocessing & Feature Engineering">Preprocessing & Features</button>
+    <button class="chip" data-filter="Language Representation">Language Representation</button>
+    <button class="chip" data-filter="Language Models">Language Models</button>
+  </div>
+
+  <div class="chambers-intro-card" data-reveal>
+    <div class="chambers-intro-copy">
+      <p class="section-eyebrow">AI Archivist Library Mapping</p>
+      <h3>Documents become books, words become visitors, sentences become rooms.</h3>
+      <p>The Archivists translate each NLP concept into a place, a path, or a relationship so the library feels like a living language archive.</p>
+    </div>
+    <div class="mapping-grid">
+      <div class="mapping-item is-glow">
+        <strong>Documents</strong>
+        <span>Books on the shelves</span>
+      </div>
+      <div class="mapping-item">
+        <strong>Words</strong>
+        <span>Visitors entering the hall</span>
+      </div>
+      <div class="mapping-item">
+        <strong>Sentences</strong>
+        <span>Rooms built for one idea</span>
+      </div>
+      <div class="mapping-item">
+        <strong>Meaning</strong>
+        <span>Shared interests and profiles</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="chambers-grid" id="chambersGrid"></div>
+</section>
+
+<!-- ============ 5. NLP GALAXY MAP ============ -->
+<section class="section galaxy" id="galaxy">
+  <div class="section-head">
+    <p class="section-eyebrow">Archive Chamber 03</p>
+    <h2 class="section-title">The NLP Galaxy Map</h2>
+    <p class="section-desc">Every wing of the library orbits one idea. Explore NLP the way the Archivists do — as a system, not a sitemap.</p>
+  </div>
+  <div class="galaxy-stage" id="galaxyStage"></div>
+</section>
+
+<!-- ============ 6. COMPARISON ARENA ============ -->
+<section class="section arena" id="arena">
+  <div class="section-head">
+    <p class="section-eyebrow">Archive Chamber 04</p>
+    <h2 class="section-title">Comparison Arena</h2>
+    <p class="section-desc">Two artifacts enter. Five criteria decide how each performs against the other — measured, not argued.</p>
+  </div>
+  <div class="arena-tabs" id="arenaTabs"></div>
+  <div class="arena-stage" id="arenaStage"></div>
+</section>
+
+<!-- ============ 7. WORKFLOW OBSERVATORY ============ -->
+<section class="section observatory" id="observatory">
+  <div class="section-head">
+    <p class="section-eyebrow">Archive Chamber 05</p>
+    <h2 class="section-title">Workflow Observatory</h2>
+    <p class="section-desc">The Language Representation Journey — how a single word travels from raw text to a context-aware identity.</p>
+  </div>
+  <div class="observatory-board" id="observatoryBoard" aria-label="Workflow Observatory board"></div>
+</section>
+
+<!-- ============ 8. RESEARCH TIMELINE ============ -->
+<section class="section timeline-section" id="timeline">
+  <div class="section-head">
+    <p class="section-eyebrow">Archive Chamber 06</p>
+    <h2 class="section-title">Research Timeline</h2>
+    <p class="section-desc">From frequency tables to self-attention — four decades of the library learning to read.</p>
+  </div>
+  <div class="timeline" id="timelineList"></div>
+</section>
+
+<!-- ============ 8.5 RESEARCH & INDUSTRY INSIGHTS ============ -->
+<section class="section research-insights" id="researchInsights">
+  <div class="section-head">
+    <p class="section-eyebrow">Research & Industry</p>
+    <h2 class="section-title">Research & Industry Insights</h2>
+    <p class="section-desc">Recent research developments, major industrial deployments, and an open-source framework that makes preprocessing accessible to every practitioner.</p>
+  </div>
+
+  <div class="research-grid">
+    <article class="research-card">
+      <span class="badge">RECENT RESEARCH</span>
+      <h3>Subword Tokenization: BPE and WordPiece</h3>
+      <p>Byte Pair Encoding (BPE) and WordPiece are data-driven subword tokenization algorithms that split rare words into smaller units while keeping frequent words intact. Instead of treating "unhappiness" as one unknown token, BPE segments it into "un" + "happiness" — both known subwords.</p>
+      <ul>
+        <li><strong>Importance:</strong> Eliminates the out-of-vocabulary (OOV) problem so any word — neologisms, jargon, and multilingual terms — can be represented as known subword sequences.</li>
+        <li><strong>Impact on NLP:</strong> BPE underpins GPT-family tokenization; WordPiece powers BERT and many Google models. Nearly all modern LLMs use subword tokenization.</li>
+      </ul>
+    </article>
+
+    <article class="research-card">
+      <span class="badge">RECENT RESEARCH</span>
+      <h3>Neural Lemmatization and Context-Aware Preprocessing</h3>
+      <p>Neural lemmatization uses sequence-to-sequence transformers trained on annotated corpora to lemmatize words in context — handling irregular forms, code-switching, and domain-specific language.</p>
+      <ul>
+        <li><strong>Importance:</strong> Context-dependent lemmatization resolves ambiguous surface forms (e.g., "files" → noun vs verb), reducing downstream errors in NER and parsing.</li>
+        <li><strong>Impact on NLP:</strong> spaCy v3 uses transformer-based lemmatization with notable accuracy improvements (from ~92% to ~98% on benchmarks).</li>
+      </ul>
+    </article>
+
+    <article class="research-card">
+      <span class="badge badge--accent">INDUSTRIAL APPLICATION</span>
+      <h3>Industrial Applications</h3>
+      <h4>Google Search</h4>
+      <p><strong>Technology:</strong> BERT-based query understanding with BPE tokenization and contextual preprocessing.</p>
+      <p><strong>Benefits:</strong> ~30% improvement in understanding natural language queries; better handling of context compared to bag-of-words.</p>
+      <p><strong>Real-world Usage:</strong> Google processes billions of queries daily through a preprocessing pipeline before retrieval; BERT contextual embeddings are applied after tokenization.</p>
+
+      <h4>Meta (Facebook) Content Moderation</h4>
+      <p><strong>Technology:</strong> Multilanguage preprocessing with language detection, noise removal, and transformer classification.</p>
+      <p><strong>Benefits:</strong> Automated moderation across 100+ languages; reduces manual reviewer workload by over 90% for clear violations.</p>
+      <p><strong>Real-world Usage:</strong> Harmful Content classifiers handle hundreds of billions of items yearly, starting with language detection and language-specific tokenization.</p>
+    </article>
+
+    <article class="research-card">
+      <span class="badge badge--green">OPEN SOURCE FRAMEWORK</span>
+      <h3>Open Source NLP Framework: NLTK</h3>
+      <p><strong>Developer:</strong> Steven Bird, Ewan Klein & Edward Loper — University of Pennsylvania & University of Edinburgh.</p>
+      <p><strong>Language:</strong> Python</p>
+      <p><strong>Features:</strong></p>
+      <ul>
+        <li>Tokenization: <code>word_tokenize()</code>, <code>sent_tokenize()</code></li>
+        <li>Stop-word lists for 22 languages, stemming, and lemmatization via WordNet</li>
+        <li>POS tagging, NER helpers, and syntactic parsing utilities</li>
+      </ul>
+      <p><strong>Advantages:</strong> Comprehensive, well-documented (NLTK Book), stable, and ideal for education and rapid prototyping.</p>
+    </article>
+
+    <article class="research-card">
+      <span class="badge">SUMMARY</span>
+      <h3>Concise Summary</h3>
+      <p>These research developments and industrial deployments confirm NLP preprocessing continues to evolve. Subword tokenization removed the vocabulary bottleneck for modern LLMs; neural lemmatization raised morphological normalization quality; companies like Google and Meta apply these advances at massive scale. NLTK remains a go-to open-source toolkit for learning and prototyping these techniques.</p>
+    </article>
+  </div>
+</section>
+
+<!-- ============ 9. REAL LIFE APPLICATION ============ -->
+<section class="section application" id="application">
+  <div class="section-head">
+    <p class="section-eyebrow">Archive Chamber 07</p>
+    <h2 class="section-title">Real Life Application</h2>
+    <p class="section-desc">NLP concepts in this library power everyday systems such as search engines, chatbots, translation tools, summarizers, and spam filters.</p>
+  </div>
+
+  <div class="application-grid">
+    <article class="application-card">
+      <div class="app-card-head">
+        <div class="app-icon"><i class="fa-solid fa-magnifying-glass"></i></div>
+        <h3>Search Engines</h3>
+      </div>
+      <p class="app-desc">Web search systems index billions of documents and must match user queries to relevant pages instantly.</p>
+
+      <div class="app-block app-block--preproc">
+        <div class="app-block-title"><i class="fa-solid fa-gear"></i> Preprocessing</div>
+        <div class="app-block-body">Query lowercasing, stop-word removal, stemming/lemmatization to match query tokens to index terms.</div>
+      </div>
+
+      <div class="app-block app-block--tech">
+        <div class="app-block-title"><i class="fa-solid fa-wrench"></i> Techniques</div>
+        <div class="app-block-body">TF-IDF for document ranking, tokenisation for query parsing, noise removal for URL/anchor text.</div>
+      </div>
+
+      <div class="app-block app-block--example">
+        <div class="app-block-title"><i class="fa-solid fa-lightbulb"></i> Real Example</div>
+        <div class="app-block-body"><em>Google processes billions of queries daily — every query undergoes tokenisation, stop-word filtering, and stemming before lookup.</em></div>
+      </div>
+    </article>
+
+    <article class="application-card">
+      <div class="app-card-head">
+        <div class="app-icon"><i class="fa-solid fa-robot"></i></div>
+        <h3>Chatbots</h3>
+      </div>
+      <p class="app-desc">Conversational AI systems interpret user messages and generate contextually appropriate responses.</p>
+
+      <div class="app-block app-block--preproc">
+        <div class="app-block-title"><i class="fa-solid fa-gear"></i> Preprocessing</div>
+        <div class="app-block-body">Tokenisation, lemmatization, and case normalisation to extract user intent from varied phrasing.</div>
+      </div>
+
+      <div class="app-block app-block--tech">
+        <div class="app-block-title"><i class="fa-solid fa-wrench"></i> Techniques</div>
+        <div class="app-block-body">Named entity recognition (NER), intent classification with TF-IDF or word embeddings, sentence segmentation.</div>
+      </div>
+
+      <div class="app-block app-block--example">
+        <div class="app-block-title"><i class="fa-solid fa-lightbulb"></i> Real Example</div>
+        <div class="app-block-body"><em>Banking chatbots lemmatise user messages to recognise 'transfer', 'transferred', and 'transferring' as the same intent.</em></div>
+      </div>
+    </article>
+
+    <article class="application-card">
+      <div class="app-card-head">
+        <div class="app-icon"><i class="fa-solid fa-heart"></i></div>
+        <h3>Sentiment Analysis</h3>
+      </div>
+      <p class="app-desc">Automatically determining whether text expresses positive, negative, or neutral opinion.</p>
+
+      <div class="app-block app-block--preproc">
+        <div class="app-block-title"><i class="fa-solid fa-gear"></i> Preprocessing</div>
+        <div class="app-block-body">Noise removal (HTML, emojis kept for sentiment signals), tokenisation, case normalisation — negations NOT removed.</div>
+      </div>
+
+      <div class="app-block app-block--tech">
+        <div class="app-block-title"><i class="fa-solid fa-wrench"></i> Techniques</div>
+        <div class="app-block-body">BoW or TF-IDF features fed into a classifier; embeddings for deep models; careful stop-word handling preserves 'not'.</div>
+      </div>
+
+      <div class="app-block app-block--example">
+        <div class="app-block-title"><i class="fa-solid fa-lightbulb"></i> Real Example</div>
+        <div class="app-block-body"><em>Twitter’s brand monitoring tools analyse millions of tweets daily for product sentiment — emoji-aware cleaning preserves positive signals.</em></div>
+      </div>
+    </article>
+
+    <article class="application-card">
+      <div class="app-card-head">
+        <div class="app-icon"><i class="fa-solid fa-language"></i></div>
+        <h3>Machine Translation</h3>
+      </div>
+      <p class="app-desc">Converting text from one natural language to another automatically and accurately.</p>
+
+      <div class="app-block app-block--preproc">
+        <div class="app-block-title"><i class="fa-solid fa-gear"></i> Preprocessing</div>
+        <div class="app-block-body">Sentence segmentation, tokenisation (often subword BPE), case normalisation — all applied identically to source and target language.</div>
+      </div>
+
+      <div class="app-block app-block--tech">
+        <div class="app-block-title"><i class="fa-solid fa-wrench"></i> Techniques</div>
+        <div class="app-block-body">Subword tokenisation (BPE/WordPiece) handles out-of-vocabulary words across languages; alignment requires consistent segmentation.</div>
+      </div>
+
+      <div class="app-block app-block--example">
+        <div class="app-block-title"><i class="fa-solid fa-lightbulb"></i> Real Example</div>
+        <div class="app-block-body"><em>Google Translate applies language-specific sentence segmentation and subword tokenisation before passing text to its Neural Machine Translation model.</em></div>
+      </div>
+    </article>
+
+    <article class="application-card">
+      <div class="app-card-head">
+        <div class="app-icon"><i class="fa-solid fa-envelope"></i></div>
+        <h3>Email Spam Detection</h3>
+      </div>
+      <p class="app-desc">Automatically classifying incoming emails as spam or legitimate (ham) to protect users.</p>
+
+      <div class="app-block app-block--preproc">
+        <div class="app-block-title"><i class="fa-solid fa-gear"></i> Preprocessing</div>
+        <div class="app-block-body">HTML noise removal, URL removal, case normalisation, stop-word removal, tokenisation.</div>
+      </div>
+
+      <div class="app-block app-block--tech">
+        <div class="app-block-title"><i class="fa-solid fa-wrench"></i> Techniques</div>
+        <div class="app-block-body">TF-IDF weighted BoW creates the feature vector; words like 'FREE', 'WIN', 'CLICK' score high in spam corpus IDF.</div>
+      </div>
+
+      <div class="app-block app-block--example">
+        <div class="app-block-title"><i class="fa-solid fa-lightbulb"></i> Real Example</div>
+        <div class="app-block-body"><em>Gmail’s spam filter uses TF-IDF features on preprocessed email body text — 'FREE MONEY NOW!!!' maps to high-TF-IDF tokens that indicate spam.</em></div>
+      </div>
+    </article>
+
+    <article class="application-card">
+      <div class="app-card-head">
+        <div class="app-icon"><i class="fa-solid fa-star"></i></div>
+        <h3>Recommendation Systems</h3>
+      </div>
+      <p class="app-desc">Suggesting relevant products, articles, or content based on user behaviour and item descriptions.</p>
+
+      <div class="app-block app-block--preproc">
+        <div class="app-block-title"><i class="fa-solid fa-gear"></i> Preprocessing</div>
+        <div class="app-block-body">Product/article description tokenisation, stop-word removal, TF-IDF vectorisation for content-based matching.</div>
+      </div>
+
+      <div class="app-block app-block--tech">
+        <div class="app-block-title"><i class="fa-solid fa-wrench"></i> Techniques</div>
+        <div class="app-block-body">TF-IDF similarity between item descriptions; word embeddings for semantic product matching; collaborative filtering on term features.</div>
+      </div>
+
+      <div class="app-block app-block--example">
+        <div class="app-block-title"><i class="fa-solid fa-lightbulb"></i> Real Example</div>
+        <div class="app-block-body"><em>Netflix analyses movie synopsis text using TF-IDF after preprocessing: films with similar rare keywords score high content similarity.</em></div>
+      </div>
+    </article>
+  </div>
+
+  <div class="application-summary">
+    <h3>Summary Table</h3>
+    <div class="application-table-wrap">
+      <table>
+        <thead>
+          <tr>
+            <th>Application</th>
+            <th>Relevant NLP Concepts</th>
+            <th>Expected Benefits</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Search Engines</td>
+            <td>Tokenization, Stop-word Removal, TF-IDF, Word Embeddings, Transformers</td>
+            <td>Accurate and relevant search results</td>
+          </tr>
+          <tr>
+            <td>Chatbots</td>
+            <td>Sentence Segmentation, Word Embeddings, Contextual Embeddings, Neural Models, Transformers</td>
+            <td>Human-like conversations and faster support</td>
+          </tr>
+          <tr>
+            <td>Machine Translation</td>
+            <td>Tokenization, Lemmatization, FastText, Contextual Embeddings, Transformers</td>
+            <td>Accurate multilingual communication</td>
+          </tr>
+          <tr>
+            <td>Text Summarization</td>
+            <td>Sentence Segmentation, TF-IDF, Word Embeddings, Neural Models</td>
+            <td>Quick understanding of long documents</td>
+          </tr>
+          <tr>
+            <td>Spam Email Detection</td>
+            <td>Text Cleaning, Noise Removal, Bag of Words, TF-IDF, Word2Vec</td>
+            <td>Efficient spam filtering and improved security</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 10. IMPACT / SUSTAINABILITY NETWORK ============ -->
+<section class="section impact" id="impact">
+  <div class="section-head">
+    <p class="section-eyebrow">Archive Chamber 07</p>
+    <h2 class="section-title">NLP for Society</h2>
+    <p class="section-desc">Every technique in this repository eventually reaches a real reading room. Here's where.</p>
+  </div>
+  <div class="impact-grid" id="impactGrid"></div>
+</section>
+
+<!-- ============ 10. CONTRIBUTORS HALL ============ -->
+<section class="section contributors" id="contributors">
+  <div class="section-head">
+    <p class="section-eyebrow">Archive Chamber 08</p>
+    <h2 class="section-title">Contributors Hall</h2>
+    <p class="section-desc">Two architects, equal contribution, distinct disciplines.</p>
+  </div>
+
+  <div class="contributors-grid" id="contributorsGrid"></div>
+
+  <div class="matrix-wrap">
+    <h3 class="matrix-title">Contribution Matrix</h3>
+    <div class="matrix" id="contributionMatrix"></div>
+  </div>
+</section>
+
+</main>
+
+<!-- ============ FOOTER ============ -->
+<footer class="footer">
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <span class="nav-brand-mark">&infin;</span>
+      <span>The Infinity Knowledge Library</span>
+    </div>
+    <p class="footer-note">An NLP Knowledge Artifact Repository — Language Representation &amp; Language Models, told through the AI Archivists.</p>
+  </div>
+</footer>
+
+<!-- ============ ARTIFACT VIEWER MODAL ============ -->
+<div class="modal-overlay" id="modalOverlay">
+  <div class="modal artifact-modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+    <button class="modal-close" id="modalClose" aria-label="Close">
+      <i class="fa-solid fa-xmark"></i>
+    </button>
+    <div class="modal-body" id="modalBody"></div>
+  </div>
+</div>
+
+<!-- ============ AI ARCHIVIST ASSISTANT ============ -->
+<div class="archivist" id="archivist">
+  <button class="archivist-fab" id="archivistFab" aria-label="Ask the Archivist">
+    <i class="fa-solid fa-feather-pointed"></i>
+  </button>
+
+  <div class="archivist-panel" id="archivistPanel">
+    <div class="archivist-header">
+      <div>
+        <p class="archivist-header-title">Ask the Archivist</p>
+        <p class="archivist-header-sub">Answers pulled straight from the archive</p>
+      </div>
+      <button class="archivist-close" id="archivistClose" aria-label="Close chat"><i class="fa-solid fa-xmark"></i></button>
+    </div>
+
+    <div class="archivist-messages" id="archivistMessages"></div>
+
+    <div class="archivist-suggestions" id="archivistSuggestions"></div>
+
+    <form class="archivist-input-row" id="archivistForm">
+      <input type="text" id="archivistInput" placeholder="Ask about any concept…" autocomplete="off">
+      <button type="submit" aria-label="Send"><i class="fa-solid fa-paper-plane"></i></button>
+    </form>
+  </div>
+</div>
+
+<script src="js/data.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>
